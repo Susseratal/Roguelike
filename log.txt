@@ -1,2 +1,2 @@
+DEBUG:root:(52, 202)
 DEBUG:root:This message should go to the log file
-DEBUG:root:The next issue is I don't actually know what to do from here.

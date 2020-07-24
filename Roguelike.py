@@ -14,9 +14,11 @@ class Environment:
         self.name = name
 
 class Room:
-    def __init__(self, X, Y):
+    def __init__(self, X, Y, Width, Height):
         self.X = X
         self.Y = Y
+        self.Width = width
+        self.Height = height
 
 Alien = Enemy("Alien", 10)
 Terminal = Enemy("Terminal", 5)
@@ -27,17 +29,31 @@ Ceiling = Environment("--")
 Floor = Environment(".")
 Gold = Environment("*")
 
-X = random.randint(0,40)
-Y = random.randint(0,40)
-B = Room(X, Y)
-
 def main (screen):
     logging.basicConfig(filename="log.txt", level=logging.DEBUG, filemode="w")
     curses.start_color()
     curses.init_pair(1, curses.COLOR_CYAN, curses.COLOR_BLACK)
     screen.clear()
 
-    logging.debug("This message should go to the log file")
+    X = random.randint(15,90)
+    Y = random.randint(0,18)
+    width = random.randint(10,40)
+    height = random.randint(10,18)
+    B = (X + width)
+    O = (Y + height)
+    screen.vline(Y,X,curses.ACS_VLINE,height)
+    screen.hline(Y,X,curses.ACS_HLINE,width)
+    screen.vline(Y,B,curses.ACS_VLINE,height)
+    screen.hline(O,X,curses.ACS_HLINE,width)
+    screen.addch(Y,X,curses.ACS_ULCORNER)
+    screen.addch(Y,B,curses.ACS_URCORNER)
+    screen.addch(O,X,curses.ACS_LLCORNER)
+    screen.addch(O,B,curses.ACS_LRCORNER)
 
+
+    #logging
+    logging.debug(screen.getmaxyx())
+    logging.debug("This message should go to the log file")
     screen.getkey()
 wrapper (main)
+
