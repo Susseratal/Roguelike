@@ -1,3 +1,3 @@
 from .enemy import Enemy
-from .enviroment import Enviroment
+from .environment import Environment
 from .room import Room

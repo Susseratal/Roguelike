@@ -4,7 +4,7 @@ import curses
 from curses import wrapper
 import curses.ascii
 
-from assets import *
+from things import *
 
 Alien = Enemy("Alien", 10)
 Terminal = Enemy("Terminal", 5)
