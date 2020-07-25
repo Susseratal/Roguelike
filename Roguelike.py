@@ -1,24 +1,10 @@
 import random 
 import logging
 import curses
-import curses.ascii
 from curses import wrapper
+import curses.ascii
 
-class Enemy:
-    def __init__(self, name, health):
-        self.name = name
-        self.health = health
-
-class Environment:
-    def __init__(self, name):
-        self.name = name
-
-class Room:
-    def __init__(self, X, Y, Width, Height):
-        self.X = X
-        self.Y = Y
-        self.Width = width
-        self.Height = height
+from assets import *
 
 Alien = Enemy("Alien", 10)
 Terminal = Enemy("Terminal", 5)
@@ -28,6 +14,7 @@ Wall = Environment("|")
 Ceiling = Environment("--")
 Floor = Environment(".")
 Gold = Environment("*")
+
 
 def main (screen):
     logging.basicConfig(filename="log.txt", level=logging.DEBUG, filemode="w")
@@ -55,5 +42,6 @@ def main (screen):
     logging.debug(screen.getmaxyx())
     logging.debug("This message should go to the log file")
     screen.getkey()
-wrapper (main)
 
+
+wrapper (main)
