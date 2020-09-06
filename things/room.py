@@ -4,4 +4,3 @@ class Room:
 		self.Y = Y
 		self.Width = Width
 		self.Height = Height
-

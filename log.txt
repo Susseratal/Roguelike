@@ -1,2 +1,2 @@
-DEBUG:root:(63, 237)
+DEBUG:root:(53, 205)
 DEBUG:root:This message should go to the log file
